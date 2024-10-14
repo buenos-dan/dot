@@ -1,4 +1,4 @@
-# Vimux: basic configs of tmux and vim
+# Vimux: basic configs of tmux and vim (For Linux)
 
 ## Vim config
 ```bash
@@ -8,6 +8,9 @@ rm ~/.vimrc
 
 ## Tmux config
 ```bash
+# Install Tmux
+apt install tmux
+
 cp -r tmux ~/.config/tmux
 ```
 
