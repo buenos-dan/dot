@@ -1,20 +1,34 @@
-# Vimux: basic configs of tmux and vim (For Linux)
+# Personal dot files (For Linux)
+
+## Bash config
+```
+apt install tmux fzf ripgrep bat exuberant-ctags
+```
 
 ## Vim config
 ```bash
+rm -rf ~/.vim
 cp -r vim ~/.vim
 rm ~/.vimrc
 
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install Plugins
+:PlugInstall
+
+# Install node.js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+# close terminal and reopen it.
+nvm install 20
+
+# Install coc-pyright
+:CocInstall coc-pyright coc-lists
 ```
 
 ## Tmux config
 ```bash
-# Install Tmux
-apt install tmux fzf ripgrep bat
-
 cp -r tmux ~/.config/tmux
 ```
 
@@ -24,15 +38,14 @@ cp git/gitconfig ~/.gitconfig
 
 # Note: No need to set anymore
 # Set global ignore pattern
-# git config --global core.excludesfile ~/vimux/git/gitignore
+cp -r git ~/.config
+git config --global core.excludesfile ~/.config/git/gitignore
 # Set no pager in branch cmd
 # git config --global pager.branch false
 ```
 
 ## Ctags config
 ```
-# install exuberant-ctags
-apt install exuberant-ctags
 cp ctag/ctags ~/.ctags
 
 # create ctag file
